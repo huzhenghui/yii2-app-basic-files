@@ -34,6 +34,8 @@
       "copyFiles": [
         {
           "./vendor/yiisoft/yii2-app-basic/config/console.php": "./config/console.php",
+          "./vendor/yiisoft/yii2-app-basic/config/db.php": "./config/db.php",
+          "./vendor/yiisoft/yii2-app-basic/config/params.php": "./config/params.php",
           "./vendor/yiisoft/yii2-app-basic/config/web.php": "./config/web.php",
           "./vendor/yiisoft/yii2-app-basic/web/assets/.gitignore": "./web/assets/.gitignore",
           "./vendor/yiisoft/yii2-app-basic/web/index.php": "./web/index.php",
