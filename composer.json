@@ -1,6 +1,56 @@
 {
-    "name": "huzhenghui/yii2-app-basic-files",
-    "description": "",
-    "require": {
+  "name": "huzhenghui/yii2-app-basic-files",
+  "description": "",
+  "type": "library",
+  "authors": [
+    {
+      "name": "胡争辉",
+      "email": "hu@daonao.com"
     }
+  ],
+  "require": {},
+  "require-dev": {
+    "yiisoft/yii2-app-basic": "~2.0"
+  },
+  "scripts": {
+    "post-update-cmd": [
+      "yii\\composer\\Installer::postInstall"
+    ],
+    "update-command": [
+      "Composer\\Config::disableProcessTimeout",
+      "@composer update"
+    ],
+    "clear-all": [
+      "/usr/local/opt/trash-cli/bin/trash --force -- ./vendor/",
+      "/usr/local/opt/trash-cli/bin/trash --force -- ./composer.lock"
+    ]
+  },
+  "scripts-descriptions": {
+    "update-command": "composer update",
+    "clear-all": "Clear all temporary file"
+  },
+  "extra": {
+    "yii\\composer\\Installer::postInstall": {
+      "copyFiles": [
+        {
+          "./vendor/yiisoft/yii2-app-basic/config/console.php": "./config/console.php",
+          "./vendor/yiisoft/yii2-app-basic/config/web.php": "./config/web.php",
+          "./vendor/yiisoft/yii2-app-basic/web/assets/.gitignore": "./web/assets/.gitignore",
+          "./vendor/yiisoft/yii2-app-basic/web/index.php": "./web/index.php",
+          "./vendor/yiisoft/yii2-app-basic/yii": "./yii"
+        }
+      ]
+    }
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ],
+  "config": {
+    "allow-plugins": {
+      "yiisoft/yii2-composer": false
+    }
+  }
 }
